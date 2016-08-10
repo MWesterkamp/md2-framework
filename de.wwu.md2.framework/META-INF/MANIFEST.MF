@@ -42,5 +42,8 @@ Export-Package: de.wwu.md2.framework,
  de.wwu.md2.framework.util,
  org.apache.commons.io,
  com.google.inject,
- org.zeroturnaround.zip
+ org.zeroturnaround.zip,
+ de.wwu.md2.framework.test,
+ de.wwu.md2.framework.test.impl,
+ de.wwu.md2.framework.test.util
 Bundle-ClassPath: libs/guice-multibindings-3.0.jar,libs/guice-3.0.jar,libs/zt-zip-1.6.jar,libs/slf4j-api-1.7.7.jar,libs/commons-io-2.4.jar,libs/commons-codec-1.9.jar,.

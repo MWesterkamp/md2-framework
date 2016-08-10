@@ -1,0 +1,59 @@
+grammar de.wwu.md2.framework.Test with org.eclipse.xtext.common.Terminals
+
+generate test "http://www.wwu.de/md2/framework/Test"
+
+/*
+ * An Enum allows the user to define a list of STRING values, stored
+ * in the enumBody.
+ */
+Enum:
+	'enum' name = EID '{'
+		(enumBody = EnumBody)?
+	'}'
+;
+
+/*
+ * An EnumBody allows the user to define a list of STRING values.
+ */
+EnumBody:
+	elements += STRING (',' elements += STRING)*
+;
+
+/*
+ * Extended, keyword insensitive ID. Using the EID allows to use a known keyword as an ID.
+ * 
+ * TODO Find all keywords that do not break the grammar
+ */
+EID:
+	//location content provider fields
+	'latitude' | 'longitude' | 'altitude' | 'city' | 'street' | 'number' | 'postalCode' | 'country' | 'province' |
+	
+	// font styles
+	'bold' | 'italic' | 'normal' |
+	
+	// colors
+	'aqua' | 'black' | 'blue' | 'gray' | 'green' | 'lime' | 'maroon' | 'navy' | 'olive' | 'purple' |
+	'red' | 'silver' | 'white' | 'yellow' |
+	
+	// other keywords
+	'Location' | 
+	
+	// arbitrary ID
+	ID
+	;
+	/**
+ * Qualified names of the form
+ * <code>ID (.ID)*</code>
+ */
+QUALIFIED_NAME:
+	EID ('.' EID)*
+;
+
+/**
+ * Override default terminal rule ID to not allow two underscores (__) at the beginning of the ID
+ * as such IDs are used internally by the pre-processor.
+ */
+terminal ID:
+	'^'?('a'..'z'|'A'..'Z'|'_') (('a'..'z'|'A'..'Z'|'0'..'9') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*)?
+;
+	

@@ -1,0 +1,7 @@
+grammar de.wwu.md2.framework.TestTwo with org.eclipse.xtext.common.Terminals
+
+generate testtwo "http://www.wwu.de/md2/framework/testtwo"
+
+ABC:
+	sss = STRING
+;

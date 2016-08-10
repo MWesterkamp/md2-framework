@@ -1,0 +1,14 @@
+«IMPORT de::wwu::md2::framework::ui::wizard»
+
+«DEFINE main FOR TestProjectInfo»
+«EXPAND model FOR this»
+«ENDDEFINE»
+
+«DEFINE model FOR TestProjectInfo»
+«FILE "src/model/Model.md2"-»
+/*
+ * This is an example model
+ */
+Hello Xtext!
+«ENDFILE»
+«ENDDEFINE»

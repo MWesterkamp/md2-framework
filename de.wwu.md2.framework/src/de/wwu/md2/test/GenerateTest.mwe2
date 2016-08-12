@@ -6,7 +6,7 @@ import org.eclipse.xtext.ui.generator.*
 
 var projectName = "de.wwu.md2.framework"
 
-var grammarURI = "platform:/resource/${projectName}/src/de/wwu/md2/framework/Test.xtext"
+var grammarURI = "platform:/resource/${projectName}/src/de/wwu/md2/test/Test.xtext"
 var file.extensions = "md2"
 var runtimeProject = "../${projectName}"
 
@@ -23,8 +23,8 @@ Workflow {
     component = DirectoryCleaner {
         directory = "${runtimeProject}.ui/src-gen"
     }
-
-    component = Generator {
+	
+	component = Generator {
         pathRtProject = runtimeProject
         pathUiProject = "${runtimeProject}.ui"
         pathTestProject = "${runtimeProject}.tests"
